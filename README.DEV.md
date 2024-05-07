@@ -25,6 +25,7 @@ Generally speaking, this was a great experience. I really enjoined working on yo
 ## TODO
 Due to a very limited availability of time, the following tasks are still open:
 - [x] add address & user endpoint for kunde
+- [ ] only fetch non soft deleted entities
 - [ ] JWT
 - [ ] add tests
 

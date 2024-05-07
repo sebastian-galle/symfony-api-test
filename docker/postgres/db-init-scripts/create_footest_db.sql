@@ -143,15 +143,6 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA sec
     GRANT INSERT, SELECT, UPDATE, DELETE, TRUNCATE ON TABLES
     TO web;
 
-GRANT ALL ON SCHEMA public TO sadmin WITH GRANT OPTION;
-GRANT USAGE ON SCHEMA public TO web;
-ALTER DEFAULT PRIVILEGES IN SCHEMA public
-    GRANT INSERT, SELECT, UPDATE, DELETE, TRUNCATE ON TABLES
-    TO web;
-GRANT ALL PRIVILEGES ON TABLE public.bundesland TO web;
-GRANT USAGE, SELECT ON SEQUENCE std.adresse_adresse_id_seq TO web;
-GRANT USAGE, SELECT ON SEQUENCE sec.user_id_seq TO web;
-
 CREATE TABLE sec.vermittler_user (
     id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     email varchar (200),
@@ -181,3 +172,12 @@ INSERT INTO sec.user (email, passwd, kundenid, aktiv, last_login) VALUES
 ('sezen@example.net', crypt('aksu', gen_salt('bf', 10)), '80BA9796', 1, NULL),
 ('eleftheria@example.net', crypt('arvanitaki', gen_salt('bf', 10)), '80B4F645', 0, now() - interval '3 days'),
 ('ebba@example.net', crypt('forsberg', gen_salt('bf', 10)), NULL, 1, now());
+
+GRANT ALL ON SCHEMA public TO sadmin WITH GRANT OPTION;
+GRANT USAGE ON SCHEMA public TO web;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public
+    GRANT INSERT, SELECT, UPDATE, DELETE, TRUNCATE ON TABLES
+    TO web;
+GRANT ALL PRIVILEGES ON TABLE public.bundesland TO web;
+GRANT USAGE, SELECT ON SEQUENCE std.adresse_adresse_id_seq TO web;
+GRANT USAGE, SELECT ON SEQUENCE sec.user_id_seq TO web;
