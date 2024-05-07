@@ -41,10 +41,10 @@ class User
     #[Assert\NotBlank]
     #[Assert\Type('string')]
     #[Assert\Length(['min' => 8])]
-    #[Assert\Regex(['pattern' => '/\d+/i'])]
-    #[Assert\Regex(['pattern' => '/[a-z]+/i'])]
+    #[Assert\Regex(['pattern' => '/\d+/'])]
+    #[Assert\Regex(['pattern' => '/[a-z]+/'])]
     #[Assert\Regex(['pattern' => '/[A-Z]+/'])]
-    #[Assert\Regex(['pattern' => '/[#?!@$%^&*-_]+/i'])]
+    #[Assert\Regex(['pattern' => '/[#?!@$%^&*-_]+/'])]
     #[Groups(['write'])]
     private string $passwd;
 
