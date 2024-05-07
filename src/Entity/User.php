@@ -39,6 +39,12 @@ class User
 
     #[ORM\Column(name:"passwd", type:"string", length:80, nullable:false)]
     #[Assert\NotBlank]
+    #[Assert\Type('string')]
+    #[Assert\Length(['min' => 8])]
+    #[Assert\Regex(['pattern' => '/\d+/i'])]
+    #[Assert\Regex(['pattern' => '/[a-z]+/i'])]
+    #[Assert\Regex(['pattern' => '/[A-Z]+/'])]
+    #[Assert\Regex(['pattern' => '/[#?!@$%^&*-_]+/i'])]
     #[Groups(['write'])]
     private string $passwd;
 
