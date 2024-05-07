@@ -31,6 +31,9 @@ docker-stop:
 composer:                                                                      ## install composer deps
 	$(COMPOSER_CMD) install
 
+composer-update:                                                                      ## install composer deps
+	$(COMPOSER_CMD) update
+
 fixtures:                                                                       ## load fixtures
 	$(SYMFONY_CMD) doctrine:fixtures:load -n -vv
 
