@@ -1,0 +1,661 @@
+{
+	"info": {
+		"_postman_id": "807b12ba-174b-4d9e-9356-515f372c80dc",
+		"name": "foo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15118815"
+	},
+	"item": [
+		{
+			"name": "kunden",
+			"item": [
+				{
+					"name": "kunden",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"type": "text",
+								"uuid": "bdd3c307-f671-41dd-bc65-233ec59bb308",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/kunden?page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"kunden"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kunden",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "0cccd3bc-da0a-422f-b775-0aa0d5e068fa",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"von Burgenstaedt\",\n    \"vorname\": \"Max\",\n    \"geburtsdatum\": \"1999-12-15T00:00:00+00:00\",\n    \"firma\": \"something\",\n    \"geschlecht\": \"männlich\",\n    \"email\": \"something@somewhere.com\",\n    \"vermittlerId\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/kunden?page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"kunden"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kunden/[id]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "bd27601e-b595-446d-9b01-b32b8654ef50",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"von Burgenstaedt changed\",\n    \"vorname\": \"Max\",\n    \"geburtsdatum\": \"1999-12-15T00:00:00+00:00\",\n    \"firma\": \"something\",\n    \"geschlecht\": \"männlich\",\n    \"email\": \"something@somewhere.com\",\n    \"vermittlerId\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/kunden/{{kunde_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"kunden",
+								"{{kunde_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kunden/[id]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "ce95d140-15ea-45f6-98c7-239ae93223d5",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/kunden/{{kunde_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"kunden",
+								"{{kunde_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kunden/[id]/adressen",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "08a90bc0-a68a-41c8-b730-2c8db079d367",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url_alternative}}/kunden/{{kunde_id}}/adresse",
+							"host": [
+								"{{url_alternative}}"
+							],
+							"path": [
+								"kunden",
+								"{{kunde_id}}",
+								"adresse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kunden/[id]/adressen/[addressId]/details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "afdf1db6-16b0-4cc8-a0b3-e084c1d14138",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url_alternative}}/kunden/{{kunde_id}}/adresse",
+							"host": [
+								"{{url_alternative}}"
+							],
+							"path": [
+								"kunden",
+								"{{kunde_id}}",
+								"adresse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kunden/[id]/user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "d9eec7fb-81f1-4537-a54c-c8e96a051132",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url_alternative}}/kunden/{{kunde_id}}/user",
+							"host": [
+								"{{url_alternative}}"
+							],
+							"path": [
+								"kunden",
+								"{{kunde_id}}",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "kunden/[id]",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "65c4e451-f089-4617-b1dd-8570c1bec30f",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/kunden/{{kunde_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"kunden",
+								"{{kunde_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "adressen",
+			"item": [
+				{
+					"name": "adressen",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "d0f076e1-5e27-44e9-8c2a-c1984f35a9bd",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/adressen?page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"adressen"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adressen",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "731bb0fb-4db8-4504-8004-d3b0a9e499d6",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strasse\": \"Schleusinger Straße 13\",\n    \"plz\": \"12687\",\n    \"ort\": \"Berlin\",\n    \"bundesland\": \"BE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/adressen",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"adressen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adressen/[id]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "c09752df-fbe7-4a65-a3b3-46433cd0054a",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"strasse\": \"Schleusinger Straße 13 changed\",\n    \"plz\": \"12687\",\n    \"ort\": \"Berlin\",\n    \"bundesland\": \"BE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/adressen/{{adresse_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"adressen",
+								"{{adresse_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adressen/[id]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "74079804-2b19-4e1f-899b-5d72e8464bd5",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/adressen/{{adresse_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"adressen",
+								"{{adresse_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adressen/[id]",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "41ceb625-91be-43db-8609-ff3d2c29c4c8",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/adressen/{{adresse_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"adressen",
+								"{{adresse_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"type": "text",
+								"uuid": "56a703e8-af71-4495-8e6b-dc5c0d183a77",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/kunden?page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"kunden"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "de59ca56-6a3f-4777-9520-0f7479b74b8c",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"something@somewhere.com\",\n    \"passwd\": \"cryptedpw\",\n    \"aktiv\": 1,\n    \"kundenid\": \"{{kunde_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user[id]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "7bbe9009-8514-4838-b009-fd195bd4169b",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"something@somewhere.com\",\n    \"passwd\": \"cryptedpw\",\n    \"aktiv\": 1,\n    \"kundenid\": \"{{kunde_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/{{user_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user[id]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "15dbd6b1-0cb9-43c5-bd01-4095d1b0d118",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/{{user_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user[id]",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "3ba01ee7-f058-472b-bf1a-a83e685a7e5f",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/{{user_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vermittler",
+			"item": [
+				{
+					"name": "vermittler",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "-H 'accept: application/ld+json'",
+								"value": "",
+								"uuid": "1e88e89a-edb0-42bd-a9d1-567231816325",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/vermittler?page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vermittler"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
